@@ -8,5 +8,5 @@
 import Foundation
 
 protocol UsersViewModelCoordinatorDelegate: AnyObject {
-
+    func showUserDetails(user:Result)
 }

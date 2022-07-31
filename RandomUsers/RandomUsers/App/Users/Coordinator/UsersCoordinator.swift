@@ -10,6 +10,7 @@ import UIKit
 class UsersCoordinator: DefaultCoordinator{
     var viewController : UsersViewController?
     var viewModel : UsersViewModelProtocol
+    var detailsCoordinator:UserDetailsCoordinator?
     
     init(viewModel: UsersViewModelProtocol = UsersViewModel()) {
         self.viewModel = viewModel
@@ -22,5 +23,9 @@ class UsersCoordinator: DefaultCoordinator{
     }
 }
 extension UsersCoordinator:UsersViewModelCoordinatorDelegate{
+    func showUserDetails(user:Result) {
+        detailsCoordinator = UserDetailsCoordinator(viewModel: UserDetailsViewModel(user: user), navigationController: self.viewController?.navigationController)
+        detailsCoordinator?.start()
+    }
 }
 

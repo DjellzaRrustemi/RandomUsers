@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 protocol UsersDataSourceProtocol: class{
     func loadMoreData()
+    func showUserDetails(user: Result)
 }
 final class UsersDataSource: NSObject, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate{
     
@@ -32,7 +33,13 @@ final class UsersDataSource: NSObject, UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let selectedUser = users?[indexPath.row]{
+            self.delegate?.showUserDetails(user: selectedUser)
+        }
+    }
+    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
 
         let currentOffset = scrollView.contentOffset.y

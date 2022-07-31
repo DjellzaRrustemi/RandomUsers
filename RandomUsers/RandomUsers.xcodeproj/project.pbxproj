@@ -37,6 +37,12 @@
 		52B4133728971CA300CB25AF /* RandomUserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4133628971CA300CB25AF /* RandomUserEndpoint.swift */; };
 		52B4133928971CF600CB25AF /* RandomUserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4133828971CF600CB25AF /* RandomUserClient.swift */; };
 		52B4133B2897218000CB25AF /* UIImageView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4133A2897218000CB25AF /* UIImageView+Additions.swift */; };
+		52B4134228972C1800CB25AF /* UserDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B4134128972C1800CB25AF /* UserDetails.storyboard */; };
+		52B4134428972C3300CB25AF /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4134328972C3300CB25AF /* UserDetailsViewController.swift */; };
+		52B4134628972C7600CB25AF /* UserDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4134528972C7600CB25AF /* UserDetailsCoordinator.swift */; };
+		52B4134828972C9A00CB25AF /* UserDetailsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4134728972C9A00CB25AF /* UserDetailsViewModelProtocol.swift */; };
+		52B4134A28972CB400CB25AF /* UserDetailsViewModelCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4134928972CB400CB25AF /* UserDetailsViewModelCoordinatorDelegate.swift */; };
+		52B4134C28972CD100CB25AF /* UserDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4134B28972CD100CB25AF /* UserDetailsViewModel.swift */; };
 		54EB235932D9FA71F4F5F82B /* Pods_RandomUsers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1681C39DB59AF02C81EAEE /* Pods_RandomUsers.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +81,12 @@
 		52B4133628971CA300CB25AF /* RandomUserEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserEndpoint.swift; sourceTree = "<group>"; };
 		52B4133828971CF600CB25AF /* RandomUserClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserClient.swift; sourceTree = "<group>"; };
 		52B4133A2897218000CB25AF /* UIImageView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Additions.swift"; sourceTree = "<group>"; };
+		52B4134128972C1800CB25AF /* UserDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserDetails.storyboard; sourceTree = "<group>"; };
+		52B4134328972C3300CB25AF /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
+		52B4134528972C7600CB25AF /* UserDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsCoordinator.swift; sourceTree = "<group>"; };
+		52B4134728972C9A00CB25AF /* UserDetailsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModelProtocol.swift; sourceTree = "<group>"; };
+		52B4134928972CB400CB25AF /* UserDetailsViewModelCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModelCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		52B4134B28972CD100CB25AF /* UserDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModel.swift; sourceTree = "<group>"; };
 		7C1681C39DB59AF02C81EAEE /* Pods_RandomUsers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomUsers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -156,6 +168,7 @@
 		52B412F22897090500CB25AF /* App */ = {
 			isa = PBXGroup;
 			children = (
+				52B4133C28972B8C00CB25AF /* UserDetails */,
 				52B41314289712FC00CB25AF /* Users */,
 			);
 			path = App;
@@ -274,6 +287,51 @@
 			path = RandomUser;
 			sourceTree = "<group>";
 		};
+		52B4133C28972B8C00CB25AF /* UserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				52B4134028972BC900CB25AF /* View */,
+				52B4133F28972BC000CB25AF /* ViewModel */,
+				52B4133E28972BB300CB25AF /* Protocols */,
+				52B4133D28972B9B00CB25AF /* Coordinator */,
+			);
+			path = UserDetails;
+			sourceTree = "<group>";
+		};
+		52B4133D28972B9B00CB25AF /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				52B4134528972C7600CB25AF /* UserDetailsCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		52B4133E28972BB300CB25AF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				52B4134728972C9A00CB25AF /* UserDetailsViewModelProtocol.swift */,
+				52B4134928972CB400CB25AF /* UserDetailsViewModelCoordinatorDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		52B4133F28972BC000CB25AF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				52B4134B28972CD100CB25AF /* UserDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		52B4134028972BC900CB25AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52B4134128972C1800CB25AF /* UserDetails.storyboard */,
+				52B4134328972C3300CB25AF /* UserDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FEE019F1BC63B66E348D7EE9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +404,7 @@
 				52B412E9289707D400CB25AF /* LaunchScreen.storyboard in Resources */,
 				52B41326289714F400CB25AF /* Users.storyboard in Resources */,
 				52B412E6289707D400CB25AF /* Assets.xcassets in Resources */,
+				52B4134228972C1800CB25AF /* UserDetails.storyboard in Resources */,
 				52B413222897142100CB25AF /* UserCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +461,7 @@
 				52B412FB289709F000CB25AF /* BaseNavigationController.swift in Sources */,
 				52B4133928971CF600CB25AF /* RandomUserClient.swift in Sources */,
 				52B412F72897099200CB25AF /* AppCoordinator.swift in Sources */,
+				52B4134C28972CD100CB25AF /* UserDetailsViewModel.swift in Sources */,
 				52B4131B289713B300CB25AF /* UsersViewModelCoordinatorDelegate.swift in Sources */,
 				52B4132E28971BD500CB25AF /* APIClient.swift in Sources */,
 				52B4133728971CA300CB25AF /* RandomUserEndpoint.swift in Sources */,
@@ -409,10 +469,12 @@
 				52B4130E28970CD500CB25AF /* Coordinator.swift in Sources */,
 				52B41324289714DF00CB25AF /* UsersViewController.swift in Sources */,
 				52B412DD289707D300CB25AF /* AppDelegate.swift in Sources */,
+				52B4134A28972CB400CB25AF /* UserDetailsViewModelCoordinatorDelegate.swift in Sources */,
 				52B4133428971C7500CB25AF /* RandomUserModel.swift in Sources */,
 				52B4132A289715B900CB25AF /* UsersViewModel.swift in Sources */,
 				52B4133228971C2200CB25AF /* APIConstants.swift in Sources */,
 				52B412F9289709DE00CB25AF /* BaseViewModel.swift in Sources */,
+				52B4134828972C9A00CB25AF /* UserDetailsViewModelProtocol.swift in Sources */,
 				52B4133B2897218000CB25AF /* UIImageView+Additions.swift in Sources */,
 				52B4130928970BF600CB25AF /* UIView+Additions.swift in Sources */,
 				52B413212897142100CB25AF /* UserCell.swift in Sources */,
@@ -423,8 +485,10 @@
 				52B4130128970ABF00CB25AF /* AccountProtocol.swift in Sources */,
 				52B4130328970ADD00CB25AF /* Helper.swift in Sources */,
 				52B4131D289713D000CB25AF /* UsersViewModelProtocol.swift in Sources */,
+				52B4134628972C7600CB25AF /* UserDetailsCoordinator.swift in Sources */,
 				52B4133028971C0D00CB25AF /* APIConfiguration.swift in Sources */,
 				52B4132C289715EE00CB25AF /* UsersDataSource.swift in Sources */,
+				52B4134428972C3300CB25AF /* UserDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

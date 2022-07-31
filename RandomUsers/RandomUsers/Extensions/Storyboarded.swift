@@ -21,6 +21,9 @@ extension UIStoryboard {
     static var users: UIStoryboard {
         return UIStoryboard(name: "Users", bundle: nil)
     }
+    static var userDetails: UIStoryboard {
+        return UIStoryboard(name: "UserDetails", bundle: nil)
+    }
 }
 
 extension UIStoryboard {

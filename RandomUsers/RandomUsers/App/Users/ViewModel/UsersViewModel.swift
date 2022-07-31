@@ -8,12 +8,12 @@
 import Foundation
 protocol UsersViewModelViewDelegate:class {
     func loadMoreData()
+    func showUserDetails(user:Result)
 }
 class UsersViewModel: UsersViewModelProtocol{
     weak var coordinatorDelegate : UsersViewModelCoordinatorDelegate?
     var dataSource: UsersDataSource?
     var viewDelegate: UsersViewModelViewDelegate?
-    
     public init(){
         self.dataSource = UsersDataSource()
         self.dataSource?.delegate = self
@@ -35,6 +35,10 @@ class UsersViewModel: UsersViewModelProtocol{
     }
 }
 extension UsersViewModel: UsersDataSourceProtocol{
+    func showUserDetails(user: Result) {
+        self.viewDelegate?.showUserDetails(user: user)
+    }
+    
     func loadMoreData() {
         self.viewDelegate?.loadMoreData()
     }

@@ -49,6 +49,9 @@ class UsersViewController: UIViewController, Storyboarded {
     }
 }
 extension UsersViewController: UsersViewModelViewDelegate {
+    func showUserDetails(user: Result) {
+        self.viewModel?.coordinatorDelegate?.showUserDetails(user: user)
+    }
     func loadMoreData() {
         getUsers()
     }
