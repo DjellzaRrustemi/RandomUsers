@@ -18,7 +18,9 @@ extension Storyboarded where Self: UIViewController {
 }
 
 extension UIStoryboard {
-   
+    static var users: UIStoryboard {
+        return UIStoryboard(name: "Users", bundle: nil)
+    }
 }
 
 extension UIStoryboard {
