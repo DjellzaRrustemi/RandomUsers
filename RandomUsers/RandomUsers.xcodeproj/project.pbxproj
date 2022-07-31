@@ -30,6 +30,12 @@
 		52B413282897158800CB25AF /* UsersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B413272897158800CB25AF /* UsersCoordinator.swift */; };
 		52B4132A289715B900CB25AF /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B41329289715B900CB25AF /* UsersViewModel.swift */; };
 		52B4132C289715EE00CB25AF /* UsersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4132B289715EE00CB25AF /* UsersDataSource.swift */; };
+		52B4132E28971BD500CB25AF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4132D28971BD500CB25AF /* APIClient.swift */; };
+		52B4133028971C0D00CB25AF /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4132F28971C0D00CB25AF /* APIConfiguration.swift */; };
+		52B4133228971C2200CB25AF /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4133128971C2200CB25AF /* APIConstants.swift */; };
+		52B4133428971C7500CB25AF /* RandomUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4133328971C7500CB25AF /* RandomUserModel.swift */; };
+		52B4133728971CA300CB25AF /* RandomUserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4133628971CA300CB25AF /* RandomUserEndpoint.swift */; };
+		52B4133928971CF600CB25AF /* RandomUserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4133828971CF600CB25AF /* RandomUserClient.swift */; };
 		54EB235932D9FA71F4F5F82B /* Pods_RandomUsers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1681C39DB59AF02C81EAEE /* Pods_RandomUsers.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +67,12 @@
 		52B413272897158800CB25AF /* UsersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCoordinator.swift; sourceTree = "<group>"; };
 		52B41329289715B900CB25AF /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		52B4132B289715EE00CB25AF /* UsersDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDataSource.swift; sourceTree = "<group>"; };
+		52B4132D28971BD500CB25AF /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		52B4132F28971C0D00CB25AF /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
+		52B4133128971C2200CB25AF /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		52B4133328971C7500CB25AF /* RandomUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserModel.swift; sourceTree = "<group>"; };
+		52B4133628971CA300CB25AF /* RandomUserEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserEndpoint.swift; sourceTree = "<group>"; };
+		52B4133828971CF600CB25AF /* RandomUserClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserClient.swift; sourceTree = "<group>"; };
 		7C1681C39DB59AF02C81EAEE /* Pods_RandomUsers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomUsers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -123,6 +135,10 @@
 		52B412F0289708F700CB25AF /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				52B4133528971C9100CB25AF /* RandomUser */,
+				52B4132D28971BD500CB25AF /* APIClient.swift */,
+				52B4132F28971C0D00CB25AF /* APIConfiguration.swift */,
+				52B4133128971C2200CB25AF /* APIConstants.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -130,6 +146,7 @@
 		52B412F1289708FF00CB25AF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52B4133328971C7500CB25AF /* RandomUserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,6 +260,15 @@
 				52B413202897142100CB25AF /* UserCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		52B4133528971C9100CB25AF /* RandomUser */ = {
+			isa = PBXGroup;
+			children = (
+				52B4133628971CA300CB25AF /* RandomUserEndpoint.swift */,
+				52B4133828971CF600CB25AF /* RandomUserClient.swift */,
+			);
+			path = RandomUser;
 			sourceTree = "<group>";
 		};
 		FEE019F1BC63B66E348D7EE9 /* Pods */ = {
@@ -371,13 +397,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				52B412FB289709F000CB25AF /* BaseNavigationController.swift in Sources */,
+				52B4133928971CF600CB25AF /* RandomUserClient.swift in Sources */,
 				52B412F72897099200CB25AF /* AppCoordinator.swift in Sources */,
 				52B4131B289713B300CB25AF /* UsersViewModelCoordinatorDelegate.swift in Sources */,
+				52B4132E28971BD500CB25AF /* APIClient.swift in Sources */,
+				52B4133728971CA300CB25AF /* RandomUserEndpoint.swift in Sources */,
 				52B41313289711E800CB25AF /* Loader.swift in Sources */,
 				52B4130E28970CD500CB25AF /* Coordinator.swift in Sources */,
 				52B41324289714DF00CB25AF /* UsersViewController.swift in Sources */,
 				52B412DD289707D300CB25AF /* AppDelegate.swift in Sources */,
+				52B4133428971C7500CB25AF /* RandomUserModel.swift in Sources */,
 				52B4132A289715B900CB25AF /* UsersViewModel.swift in Sources */,
+				52B4133228971C2200CB25AF /* APIConstants.swift in Sources */,
 				52B412F9289709DE00CB25AF /* BaseViewModel.swift in Sources */,
 				52B4130928970BF600CB25AF /* UIView+Additions.swift in Sources */,
 				52B413212897142100CB25AF /* UserCell.swift in Sources */,
@@ -388,6 +419,7 @@
 				52B4130128970ABF00CB25AF /* AccountProtocol.swift in Sources */,
 				52B4130328970ADD00CB25AF /* Helper.swift in Sources */,
 				52B4131D289713D000CB25AF /* UsersViewModelProtocol.swift in Sources */,
+				52B4133028971C0D00CB25AF /* APIConfiguration.swift in Sources */,
 				52B4132C289715EE00CB25AF /* UsersDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
