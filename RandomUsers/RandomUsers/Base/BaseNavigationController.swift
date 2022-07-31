@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BaseNavigationController.swift
 //  RandomUsers
 //
 //  Created by Djellza Rrustemi on 31.7.22.
@@ -7,13 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class BaseNavigationController: UINavigationController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.navigationBar.isHidden = true
     }
-
-
 }
-
