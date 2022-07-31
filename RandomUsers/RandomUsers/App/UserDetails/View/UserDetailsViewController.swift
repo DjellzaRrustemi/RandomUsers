@@ -14,6 +14,7 @@ class UserDetailsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var userAgeLabel: UILabel!
     @IBOutlet weak var infoView: UIStackView!
     @IBOutlet weak var userEmailButton: UIButton!
+    @IBOutlet weak var starButton: UIButton!
     
     //MARK: - Properties
     var viewModel: UserDetailsViewModelProtocol?
@@ -46,7 +47,18 @@ class UserDetailsViewController: UIViewController, Storyboarded {
         self.userAgeLabel.text = "\(user.dob?.age ?? 0)"
         self.userEmailButton.setTitle(user.email, for: .normal)
         self.email = user.email ?? ""
-        
+        setupFavoriteBtn()
+    }
+    
+    func setupFavoriteBtn(){
+        if let user =  self.viewModel?.user{
+            let favoriteUsers = UserDefaults.standard.array(forKey: "workoutFavorite") as? [String] ?? [String]()
+            if favoriteUsers.contains(user.id?.value ?? "") {
+              starButton.setImage(UIImage(named: "star-filled"), for: .normal)
+            } else {
+                starButton.setImage(UIImage(named: "star"), for: .normal)
+            }
+        }
     }
     
     //MARK: - IBAction

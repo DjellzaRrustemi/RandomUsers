@@ -22,8 +22,29 @@ final class UsersDataSource: NSObject, UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(UserCell.self, for: indexPath)
+        var favoriteUsers = UserDefaults.standard.array(forKey: "workoutFavorite") as? [String] ?? [String]()
+
         if let user = users?[indexPath.row] {
             cell.users = user
+        }
+        
+        if favoriteUsers.contains(users?[indexPath.row].id?.value ?? "") {
+          cell.starButton.setImage(UIImage(named: "star-filled"), for: .normal)
+        } else {
+          cell.starButton.setImage(UIImage(named: "star"), for: .normal)
+        }
+        
+        cell.favButtonPressed = { [ weak self ] in
+            if favoriteUsers.contains(self?.users?[indexPath.row].id?.value ?? "") {
+                let removeIdx = favoriteUsers.lastIndex(where: {$0 == self?.users?[indexPath.row].id?.value ?? ""})
+                favoriteUsers.remove(at: removeIdx!)
+
+            cell.starButton.setImage(UIImage(named: "star"), for: .normal)
+            } else {
+            cell.starButton.setImage(UIImage(named: "star-filled"), for: .normal)
+              favoriteUsers.append(self?.users?[indexPath.row].id?.value ?? "")
+          }
+          UserDefaults.standard.set(favoriteUsers, forKey: "workoutFavorite")
         }
         cell.selectionStyle = .none
         return cell

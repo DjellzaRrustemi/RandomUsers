@@ -159,6 +159,7 @@
                     </view>
                     <connections>
                         <outlet property="infoView" destination="yec-zg-Lw4" id="rhP-7c-LC5"/>
+                        <outlet property="starButton" destination="DbA-VK-Xnc" id="HkJ-Y4-wTA"/>
                         <outlet property="userAgeLabel" destination="u3G-yx-oFN" id="J3A-aq-TBD"/>
                         <outlet property="userEmailButton" destination="6uF-CM-Vi9" id="qGe-Nj-5AZ"/>
                         <outlet property="userImage" destination="rys-2I-cGg" id="Er8-Qq-H1P"/>

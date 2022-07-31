@@ -13,6 +13,9 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var flagLabel: UILabel!
     @IBOutlet weak var nationalityLabel: UILabel!
+    @IBOutlet weak var starButton: UIButton!
+    
+    var favButtonPressed : (() -> ()) = {}
     
     var users: Result!{
         didSet{
@@ -56,5 +59,8 @@ class UserCell: UITableViewCell {
         self.contentView.layer.shadowOpacity = 0.8
         self.contentView.layer.shadowColor = UIColor.lightGray.cgColor
         self.contentView.layer.shadowOffset = CGSize(width: 0 , height:3)
+    }
+    @IBAction func favoriteAction(_ sender: UIButton) {
+      favButtonPressed()
     }
 }
