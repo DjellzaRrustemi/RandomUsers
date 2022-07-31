@@ -18,10 +18,13 @@ class UserDetailsViewController: UIViewController, Storyboarded {
     //MARK: - Properties
     var viewModel: UserDetailsViewModelProtocol?
     var coordinator: UserDetailsCoordinator?
-
+    var email = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInfoView()
+        if let user = self.viewModel?.user {
+            fillUserDetails(user: user)
+        }
     }
     
     func setupInfoView(){
@@ -33,8 +36,28 @@ class UserDetailsViewController: UIViewController, Storyboarded {
         self.infoView.layer.shadowOffset = CGSize(width: 0 , height:3)
     }
     
+    func fillUserDetails(user:Result){
+        if let userImg = user.picture?.large{
+            userImage.setImage(with: userImg)
+        }
+        if let name = user.name?.first, let lastname = user.name?.last {
+            self.userNameLabel.text = name + " " + lastname
+        }
+        self.userAgeLabel.text = "\(user.dob?.age ?? 0)"
+        self.userEmailButton.setTitle(user.email, for: .normal)
+        self.email = user.email ?? ""
+        
+    }
+    
     //MARK: - IBAction
     @IBAction func sendEmailAction(_ sender: Any) {
+        if let url = URL(string: "mailto:\(email)") {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
     }
     @IBAction func backButtonPressed(_ sender: Any) {
         coordinator?.stop()

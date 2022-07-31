@@ -9,4 +9,5 @@ import Foundation
 
 protocol UserDetailsViewModelProtocol : BaseViewModel {
     var coordinatorDelegate : UserDetailsViewModelCoordinatorDelegate? {get set}
+    var user: Result? {get set}
 }
