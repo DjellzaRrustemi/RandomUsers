@@ -14,6 +14,24 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var flagLabel: UILabel!
     @IBOutlet weak var nationalityLabel: UILabel!
     
+    var users: Result!{
+        didSet{
+            setUserValues()
+        }
+    }
+    
+    func setUserValues(){
+        nameLabel.text = (users.name?.first ?? "" ) + " " + (users.name?.last ?? "")
+        ageLabel.text = "\(users.dob?.age ?? 0)"
+        nationalityLabel.text = users.location?.country
+        if let nat = users.nat {
+            flagLabel.text = nat
+        }
+        if let usrImage = users.picture?.medium{
+            userImage.setImage(with: usrImage)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
