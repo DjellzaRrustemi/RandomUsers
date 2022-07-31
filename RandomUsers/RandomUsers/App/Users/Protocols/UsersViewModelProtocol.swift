@@ -6,11 +6,11 @@
 //
 
 import Foundation
-import Foundation
 
 protocol UsersViewModelProtocol : BaseViewModel {
     var coordinatorDelegate : UsersViewModelCoordinatorDelegate? {get set}
     var dataSource : UsersDataSource? {get}
+    var viewDelegate: UsersViewModelViewDelegate? {get set}
     func getUsers(users: [Result]?)
     
     //API

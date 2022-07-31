@@ -6,11 +6,17 @@
 //
 
 import Foundation
+protocol UsersViewModelViewDelegate:class {
+    func loadMoreData()
+}
 class UsersViewModel: UsersViewModelProtocol{
     weak var coordinatorDelegate : UsersViewModelCoordinatorDelegate?
     var dataSource: UsersDataSource?
+    var viewDelegate: UsersViewModelViewDelegate?
+    
     public init(){
         self.dataSource = UsersDataSource()
+        self.dataSource?.delegate = self
     }
 
     
@@ -28,4 +34,8 @@ class UsersViewModel: UsersViewModelProtocol{
          })
     }
 }
-
+extension UsersViewModel: UsersDataSourceProtocol{
+    func loadMoreData() {
+        self.viewDelegate?.loadMoreData()
+    }
+}

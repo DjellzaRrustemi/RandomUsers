@@ -20,12 +20,22 @@ class UserCell: UITableViewCell {
         }
     }
     
+    //returns Flags
+    func flag(from country: String) -> String {
+        let base : UInt32 = 127397
+        var s = ""
+        for v in country.uppercased().unicodeScalars {
+            s.unicodeScalars.append(UnicodeScalar(base + v.value)!)
+        }
+        return s
+    }
+    
     func setUserValues(){
         nameLabel.text = (users.name?.first ?? "" ) + " " + (users.name?.last ?? "")
         ageLabel.text = "\(users.dob?.age ?? 0)"
         nationalityLabel.text = users.location?.country
         if let nat = users.nat {
-            flagLabel.text = nat
+            flagLabel.text = flag(from: nat)
         }
         if let usrImage = users.picture?.medium{
             userImage.setImage(with: usrImage)
